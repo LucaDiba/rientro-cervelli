@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+# Calcolatore tasse rientro cervelli 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduzione
 
-Currently, two official plugins are available:
+Questo tool permette di calcolare, data una serie di input, la tassazione applicata ai redditi di coloro che rientrano in Italia nel 2024, confrontandola con quella che non prevede agevolazioni (coloro che già risiedono in Italia).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Uso
 
-## Expanding the ESLint configuration
+È possibile utilizzare il tool in due modi:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- accedendo al [sito web](https://lucadiba.github.io/rientro-cervelli/);
+- clonando il repository e lanciando il tool in locale.
 
-- Configure the top-level `parserOptions` property like this:
+### Sito web
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Per utilizzare il tool tramite il sito web, è sufficiente accedere [questo link](https://lucadiba.github.io/rientro-cervelli/) e inserire i parametri richiesti.
+
+### Locale
+
+Per utilizzare il tool in locale, è necessario clonare il repository:
+
+```bash
+git clone https://github.com/LucaDiba/rientro-cervelli.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Quindi, aprire la cartella appena clonata:
+
+```bash
+cd rientro-cervelli
+```
+
+Installare le dipendenze:
+
+```bash
+npm install
+```
+
+Infine, lanciare il tool:
+
+```bash
+npm dev
+```
+
+## Licenza
+
+Il tool è rilasciato sotto licenza EUPL.
