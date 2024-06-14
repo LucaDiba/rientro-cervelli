@@ -1,6 +1,6 @@
 "use client";
 
-import { formatPrice } from "@/utils/currency";
+import { formatPercentage, formatPrice } from "@/utils/currency";
 import { TaxResults } from "@/utils/tax";
 import {
   Table,
@@ -60,6 +60,15 @@ export function ResultsTable({ results }: { results: TaxResults }) {
                 {formatPrice(-results.impatriate.irpefTax)}
               </TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell>Additional IRPEF (region)</TableCell>
+              <TableCell className="text-right text-red-600">
+                {formatPrice(-results.standard.irpefRegionAddition)}
+              </TableCell>
+              <TableCell className="text-right text-red-600">
+                {formatPrice(-results.impatriate.irpefRegionAddition)}
+              </TableCell>
+            </TableRow>
             <TableRow className="bg-blue-100">
               <TableCell>Net Income</TableCell>
               <TableCell className="text-right font-bold">
@@ -67,6 +76,19 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
               <TableCell className="text-right font-bold">
                 {formatPrice(results.impatriate.netIncome)}
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Taxes</TableCell>
+              <TableCell className="text-right">
+                {formatPrice(results.standard.overallTax)}
+                <br />
+                {formatPercentage(results.standard.overallTaxRate)}
+              </TableCell>
+              <TableCell className="text-right">
+                {formatPrice(results.impatriate.overallTax)}
+                <br />
+                {formatPercentage(results.impatriate.overallTaxRate)}
               </TableCell>
             </TableRow>
           </TableBody>
