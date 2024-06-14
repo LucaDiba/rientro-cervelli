@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
@@ -60,14 +59,14 @@ export function Calculator() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6"
+          className="flex flex-row flex-wrap items-start gap-6"
         >
           <FormField
             control={form.control}
             name="grossAnnualIncome"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Gross Annual Income</FormLabel>
+                <FormLabel>Gross Annual Income (€)</FormLabel>
                 <FormControl>
                   <Input
                     type="number"
@@ -75,9 +74,7 @@ export function Calculator() {
                     onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
-                <FormDescription>
-                  Enter your gross annual income.
-                </FormDescription>
+                <FormDescription>Your gross annual income.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -87,7 +84,7 @@ export function Calculator() {
             name="region"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Region (or autonomous province)</FormLabel>
+                <FormLabel>Where are you moving to?</FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
@@ -108,8 +105,7 @@ export function Calculator() {
                   </SelectContent>
                 </Select>
                 <FormDescription>
-                  Select the region or autonomous province where you are moving
-                  to.
+                  Region or autonomous province.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -138,7 +134,6 @@ export function Calculator() {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
         </form>
       </Form>
       {results && <ResultsTable results={results} />}
