@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { HelpButton } from "./help-button";
 
 export function ResultsTable({ results }: { results: TaxResults }) {
   return (
@@ -25,7 +26,13 @@ export function ResultsTable({ results }: { results: TaxResults }) {
           </TableHeader>
           <TableBody>
             <TableRow className="bg-gray-50">
-              <TableCell>Gross Annual Income</TableCell>
+              <TableCell>
+                <HelpButton>
+                  The gross annual income is the total amount of income received
+                  by the employee in a year.
+                </HelpButton>{" "}
+                Gross Annual Income
+              </TableCell>
               <TableCell className="text-right">
                 {formatPrice(results.standard.grossAnnualIncome)}
               </TableCell>
@@ -34,7 +41,12 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>INPS</TableCell>
+              <TableCell>
+                <HelpButton>
+                  INPS is the Italian public retirement system.
+                </HelpButton>{" "}
+                INPS
+              </TableCell>
               <TableCell className="text-right text-red-600">
                 {formatPrice(-results.standard.inpsTax)}
               </TableCell>
@@ -43,7 +55,20 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
             </TableRow>
             <TableRow className="bg-gray-50">
-              <TableCell>Taxable IRPEF</TableCell>
+              <TableCell>
+                <HelpButton>
+                  The taxable IRPEF is the amount of income that is subject to
+                  the IRPEF (Italian Personal Income Tax).
+                  <br />
+                  The standard taxable amount corresponds to the gross annual
+                  income minus the INPS tax.
+                  <br />
+                  With the impatriate regime, the taxable amount corresponds to
+                  the standard taxable amount with a 50% deduction (or 60%
+                  deduction if the impatriate has minor children).
+                </HelpButton>{" "}
+                Taxable IRPEF
+              </TableCell>
               <TableCell className="text-right">
                 {formatPrice(results.standard.taxableIrpef)}
               </TableCell>
@@ -52,7 +77,13 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>IRPEF</TableCell>
+              <TableCell>
+                <HelpButton>
+                  The IRPEF is the Italian Personal Income Tax. It is calculated
+                  based on the taxable IRPEF.
+                </HelpButton>{" "}
+                IRPEF
+              </TableCell>
               <TableCell className="text-right text-red-600">
                 {formatPrice(-results.standard.irpefTax)}
               </TableCell>
@@ -61,7 +92,13 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Additional IRPEF (region)</TableCell>
+              <TableCell>
+                <HelpButton>
+                  The additional IRPEF is a regional tax on personal income. It
+                  varies by region. It is calculated based on the taxable IRPEF.
+                </HelpButton>{" "}
+                Additional IRPEF (region)
+              </TableCell>
               <TableCell className="text-right text-red-600">
                 {formatPrice(-results.standard.irpefRegionAddition)}
               </TableCell>
@@ -70,7 +107,14 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
             </TableRow>
             <TableRow className="bg-blue-100">
-              <TableCell>Net Income</TableCell>
+              <TableCell>
+                <HelpButton>
+                  The net income is the amount of income that remains after
+                  taxes have been deducted. This is the amount that the employee
+                  receives.
+                </HelpButton>{" "}
+                Net Income
+              </TableCell>
               <TableCell className="text-right font-bold">
                 {formatPrice(results.standard.netIncome)}
               </TableCell>
@@ -79,7 +123,13 @@ export function ResultsTable({ results }: { results: TaxResults }) {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Taxes</TableCell>
+              <TableCell>
+                <HelpButton>
+                  The overall tax is the total amount of taxes paid by the
+                  employee. This includes the INPS, IRPEF, and additional IRPEF.
+                </HelpButton>{" "}
+                Taxes
+              </TableCell>
               <TableCell className="text-right">
                 {formatPrice(results.standard.overallTax)}
                 <br />
