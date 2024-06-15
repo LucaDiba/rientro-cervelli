@@ -9,6 +9,7 @@ export function Header() {
         </Link>
         <div className="ml-auto flex gap-2">
           <HeaderLink to="/">Calculator</HeaderLink>
+          <HeaderLink to="/eligibility">Eligibility</HeaderLink>
         </div>
       </header>
     </div>
