@@ -56,6 +56,16 @@ export function Calculator() {
 
   return (
     <>
+      <div>
+        <h1 className="text-2xl font-semibold mb-4">Income Tax Calculator</h1>
+        <p>
+          Italy offers a tax facilitation for new residents. This calculator
+          helps you estimate how much you would pay in income tax if you moved
+          to Italy ("impatriate"), compared to the amount that you would pay
+          without the facilitation ("standard").
+        </p>
+      </div>
+      <hr className="my-6" />
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
