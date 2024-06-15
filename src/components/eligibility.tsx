@@ -144,15 +144,21 @@ export function Eligibility() {
                         className="flex flex-col space-y-1"
                       >
                         <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="more-than" id="more-than" />
-                          <Label htmlFor="more-than">
+                          <RadioGroupItem
+                            value="more-than"
+                            id="timeSpentAbroad-more-than"
+                          />
+                          <Label htmlFor="timeSpentAbroad-more-than">
                             I have been a resident outside Italy for at least{" "}
                             {minimumYearsSpentAbroad} years.
                           </Label>
                         </div>
                         <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="less-than" id="less-than" />
-                          <Label htmlFor="less-than">
+                          <RadioGroupItem
+                            value="less-than"
+                            id="timeSpentAbroad-less-than"
+                          />
+                          <Label htmlFor="timeSpentAbroad-less-than">
                             I have been a resident outside Italy for less than{" "}
                             {minimumYearsSpentAbroad} years.
                           </Label>
@@ -181,9 +187,9 @@ export function Eligibility() {
                             <div className="flex items-center space-x-2">
                               <RadioGroupItem
                                 value="more-than"
-                                id="more-than"
+                                id="timeInItaly-more-than"
                               />
-                              <Label htmlFor="more-than">
+                              <Label htmlFor="timeInItaly-more-than">
                                 I am planning to stay in Italy for at least 2
                                 years.
                               </Label>
@@ -191,9 +197,9 @@ export function Eligibility() {
                             <div className="flex items-center space-x-2">
                               <RadioGroupItem
                                 value="less-than"
-                                id="less-than"
+                                id="timeInItaly-less-than"
                               />
-                              <Label htmlFor="less-than">
+                              <Label htmlFor="timeInItaly-less-than">
                                 I am planning to stay in Italy for less than 2
                                 years.
                               </Label>
