@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Route, Routes } from "react-router-dom";
 import { Footer } from "@/components/footer";
 import { Eligibility } from "@/components/eligibility";
+import { PrivacyPolicy } from "@/components/privacy-policy";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Calculator />} />
           <Route path="/eligibility" element={<Eligibility />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </div>
       <Footer />

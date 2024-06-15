@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Footer() {
   return (
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -6,6 +8,9 @@ export function Footer() {
           The data provided by this website is indicative and may not be
           accurate. Please consult a tax professional for accurate information.
         </i>
+        <Link to="/privacy-policy" className="ml-auto">
+          Privacy Policy
+        </Link>
       </footer>
     </div>
   );
