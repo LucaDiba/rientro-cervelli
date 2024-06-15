@@ -1,6 +1,7 @@
 import { Calculator } from "@/components/calculator";
-import { Header } from "./components/header";
+import { Header } from "@/components/header";
 import { Route, Routes } from "react-router-dom";
+import { Footer } from "@/components/footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route path="/" element={<Calculator />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }
